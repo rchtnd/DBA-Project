@@ -6,6 +6,8 @@ CREATE TABLE customer_t (
     customer_email VARCHAR(20) NOT NULL,
     CONSTRAINT customer_pk PRIMARY KEY (customer_id)
 );
+
+--@block
 CREATE TABLE suppliers_t(
 	supplier_id INTEGER NOT NULL,
     supplier_name VARCHAR(20) NOT NULL,
@@ -13,6 +15,7 @@ CREATE TABLE suppliers_t(
     CONSTRAINT supplier_fk PRIMARY KEY(supplier_id)
 );
 
+--@block
 CREATE TABLE shipping_t(
 	shipping_id INTEGER NOT NULL,
     company_name VARCHAR(20) NOT NULL,
@@ -22,6 +25,7 @@ CREATE TABLE shipping_t(
     CONSTRAINT shipping_id_pk PRIMARY KEY(shipping_id)
 );
 
+--@block
 CREATE TABLE orders_t (
 	orders_id INTEGER NOT NULL,
     customer_id INTEGER NOT NULL,
@@ -40,6 +44,7 @@ CREATE TABLE orders_t (
     REFERENCES shipping_t(shipping_id)
 );
 
+--@block
 CREATE TABLE product_t(
 	product_id INTEGER NOT NULL,
     product_name VARCHAR(50) NOT NULL,
@@ -48,6 +53,7 @@ CREATE TABLE product_t(
     CONSTRAINT product_id_pk PRIMARY KEY (product_id)
 );
 
+--@block
 CREATE TABLE order_details(
 	order_id INTEGER NOT NULL,
     product_id INTEGER NOT NULL,
